@@ -1,0 +1,36 @@
+title Depicting situation where the user creates a new note
+
+note over browser:
+inside the input tag of form element, new note is written and is submitted to server's end url '/new_note'
+end note
+
+browser --> server HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over server:
+new note is created and  redirected to end url '/notes'
+end note 
+
+server --> browser HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+note over browser:
+browser fetched http document from the server and start to render
+end note
+
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser starts executing js-code
+ that request JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "HTML is easy", date: "2019-05-23" }, ...]
+
+note over browser:
+browser executes the event handler
+that renders notes to display
+end note
